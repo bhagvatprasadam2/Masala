@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary: #164e3d;
+    --primary-hover: #113e30;
+    --primary-light: #eaf2ee;
+    --primary-border: #c8ded4;
+
+    --secondary: #c27803;
+    --secondary-hover: #a36302;
+    --secondary-light: #fdf6e9;
+    --secondary-border: #f5dfb8;
+
+    --bg-main: #ffffff;
+    --bg-surface: #f8faf8;
+    --text-main: #182620;
+    --text-muted: #55695f;
+    --border-main: #e2ebe5;
+
+    --font-heading: 'Quicksand', system-ui, sans-serif;
+    --font-subheading: 'Abel', system-ui, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-gujarati: 'Noto Sans Gujarati', system-ui, sans-serif;
+  }
+
+  html, body {
+    font-family: var(--font-body);
+    background-color: #ffffff;
+    color: var(--text-main);
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+.font-1 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.font-2 {
+  font-family: 'Abel', sans-serif;
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-gujarati {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+}
+
+/* Custom Scrollbar with the 2-color theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f8faf8;
+}
+::-webkit-scrollbar-thumb {
+  background: #164e3d;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #113e30;
+}
+
+/* Float animation */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean horizontal swipe on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
