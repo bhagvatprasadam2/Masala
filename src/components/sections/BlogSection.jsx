@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Calendar, ArrowRight } from 'lucide-react';
-import { BLOGS } from '../data/products';
+import { BLOGS } from '../../data/products';
 
 export default function BlogSection() {
   return (

@@ -56,6 +56,18 @@ export default function Hero({ products, activeProduct, onSelectProduct, onQuick
                 )}
               </div>
 
+              {/* Promotional Free Shipping Badges */}
+              <div className="flex flex-wrap items-center gap-1 pt-0.5">
+                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-[10px] font-semibold text-[#164e3d] shadow-2xs">
+                  <span className="text-[#c27803] font-bold">✓</span>
+                  <span>Free Shipping above ₹999</span>
+                </div>
+                <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-[10px] font-semibold text-[#164e3d] shadow-2xs">
+                  <span className="text-[#c27803] font-bold">✓</span>
+                  <span>First Order: Free Shipping above ₹599</span>
+                </div>
+              </div>
+
               {/* Buy Now Button */}
               <div className="pt-0.5">
                 <a
@@ -170,6 +182,18 @@ export default function Hero({ products, activeProduct, onSelectProduct, onQuick
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
                 </button>
               )}
+            </div>
+
+            {/* Promotional Free Shipping Badges */}
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-xs font-semibold text-[#164e3d] shadow-2xs">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>Free Shipping above ₹999</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-xs font-semibold text-[#164e3d] shadow-2xs">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>First Order: Free Shipping above ₹599</span>
+              </div>
             </div>
 
             {/* Buy Now Button */}

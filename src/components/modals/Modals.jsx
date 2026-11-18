@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { X, Check, Send, ShoppingBag, ShieldCheck } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import WhatsAppIcon from '../common/WhatsAppIcon';
 
 /* 1. Quick View Modal */
 export function QuickViewModal({ product, isOpen, onClose }) {
@@ -106,6 +106,18 @@ export function QuickViewModal({ product, isOpen, onClose }) {
                     {ing}
                   </span>
                 ))}
+              </div>
+            </div>
+
+            {/* Promotional Free Shipping Badges */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-2">
+              <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-[10px] font-semibold text-[#164e3d]">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>Free Shipping above ₹999</span>
+              </div>
+              <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#fdf6e9] border border-[#c27803]/35 text-[10px] font-semibold text-[#164e3d]">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>First Order: Free Shipping above ₹599</span>
               </div>
             </div>
 

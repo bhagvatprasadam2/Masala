@@ -41,6 +41,18 @@ export default function HeroBanner({ activeProduct }) {
               ))}
             </div>
 
+            {/* Promotional Free Shipping Badges */}
+            <div className="flex flex-wrap items-center gap-2 pt-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#113e30] border border-[#c27803]/40 text-xs font-semibold text-[#fdf6e9] shadow-2xs">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>Free Shipping above ₹999</span>
+              </div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#113e30] border border-[#c27803]/40 text-xs font-semibold text-[#fdf6e9] shadow-2xs">
+                <span className="text-[#c27803] font-bold">✓</span>
+                <span>First Order: Free Shipping above ₹599</span>
+              </div>
+            </div>
+
             {/* Buy Now Button */}
             <div className="flex items-center gap-4 pt-4">
               <a

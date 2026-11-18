@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
-import logoImg from '../assets/logo.png';
+import WhatsAppIcon from '../common/WhatsAppIcon';
+import AnnouncementBar from '../common/AnnouncementBar';
+import logoImg from '../../assets/logo.png';
 
 export default function Navbar({ onOpenBulkOrder }) {
   const [scrolled, setScrolled] = useState(false);
@@ -73,12 +74,17 @@ export default function Navbar({ onOpenBulkOrder }) {
   ];
 
   return (
-    <header className={`sticky top-0 w-full z-40 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-[#e2ebe5]' 
-        : 'bg-white py-3.5 border-b border-[#e2ebe5]'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 w-full z-40 shadow-xs">
+      {/* LINE 1 & LINE 2: Rotating Free Shipping Announcement Bar & Mobile App Discount Banner */}
+      <AnnouncementBar />
+
+      {/* LINE 3: Main Navbar */}
+      <div className={`w-full transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-md py-2.5 border-b border-[#e2ebe5]' 
+          : 'bg-white py-3.5 border-b border-[#e2ebe5]'
+      }`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
           {/* Logo & Tagline */}
@@ -140,6 +146,7 @@ export default function Navbar({ onOpenBulkOrder }) {
           </div>
         </div>
       </div>
+    </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (

@@ -1,20 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { PRODUCTS } from './data/products';
-import AnnouncementBar from './components/AnnouncementBar';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import HighlightsStrip from './components/HighlightsStrip';
-import HeroBanner from './components/HeroBanner';
-import IngredientsAndFaq from './components/IngredientsAndFaq';
-import AboutSection from './components/AboutSection';
-import HowToFry from './components/HowToFry';
-import OrderFunnel from './components/OrderFunnel';
-import BlogSection from './components/BlogSection';
-import BlogPostPage from './components/BlogPostPage';
-import { QuickViewModal, BulkOrderModal, PolicyModal } from './components/Modals';
-import Footer from './components/Footer';
-import FloatingActions from './components/FloatingActions';
+import HomePage from './pages/HomePage';
+import BlogPostPage from './pages/BlogPostPage';
+import { QuickViewModal, BulkOrderModal, PolicyModal } from './components/modals/Modals';
+import FloatingActions from './components/common/FloatingActions';
 
 function ScrollManager() {
   const { pathname, search } = useLocation();
@@ -34,7 +24,13 @@ function ScrollManager() {
       setTimeout(() => {
         const el = document.getElementById(scrollToId);
         if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const headerOffset = 110;
+          const elementPosition = el.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
     } else {
@@ -43,62 +39,6 @@ function ScrollManager() {
   }, [pathname, search, navigate]);
 
   return null;
-}
-
-function HomePage({
-  activeProduct,
-  setActiveProduct,
-  onQuickView,
-  onOpenBulkOrder,
-  onOpenPolicy
-}) {
-  return (
-    <div className="min-h-screen flex flex-col bg-white overflow-x-clip w-full max-w-full relative">
-      {/* 1. Top Announcement Bar */}
-      <AnnouncementBar onOpenBulkOrder={onOpenBulkOrder} />
-
-      {/* 2. Sticky Header Navbar */}
-      <Navbar onOpenBulkOrder={onOpenBulkOrder} />
-
-      {/* Main Page Body */}
-      <main className="flex-1">
-        {/* 3. Interactive Hero Section with Dynamic Product Selector & Buy Now Button */}
-        <Hero
-          products={PRODUCTS}
-          activeProduct={activeProduct}
-          onSelectProduct={setActiveProduct}
-          onQuickView={onQuickView}
-        />
-
-        {/* 4. Trust Pillars & Highlights Strip */}
-        <HighlightsStrip />
-
-        {/* 5. Hero Banner Spotlight with Buy Now */}
-        <HeroBanner activeProduct={activeProduct} />
-
-        {/* 7. Dynamic Ingredients Breakdown & Product FAQs */}
-        <IngredientsAndFaq activeProduct={activeProduct} />
-
-        {/* 8. Our Sacred Heritage & Story Section */}
-        <AboutSection />
-
-        {/* 9. Kitchen Purity Tests & Culinary Mastery Guide */}
-        <HowToFry />
-
-        {/* 10. Interactive Guided Pure Spice Box Builder with WhatsApp Order */}
-        <OrderFunnel products={PRODUCTS} />
-
-        {/* 11. Blogs & Wellness Insights */}
-        <BlogSection />
-      </main>
-
-      {/* 12. Footer with Store Links & Policies */}
-      <Footer
-        onOpenPolicy={onOpenPolicy}
-        onOpenBulkOrder={onOpenBulkOrder}
-      />
-    </div>
-  );
 }
 
 function App() {

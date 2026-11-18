@@ -25,6 +25,11 @@
     --font-gujarati: 'Noto Sans Gujarati', system-ui, sans-serif;
   }
 
+  html {
+    scroll-padding-top: 115px;
+    scroll-behavior: smooth;
+  }
+
   html, body {
     font-family: var(--font-body);
     background-color: #ffffff;

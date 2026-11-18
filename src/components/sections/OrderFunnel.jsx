@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { User, MapPin, Phone, Sparkles, CheckCircle2, ArrowRight, ArrowLeft, Gift, ShoppingCart, ShieldCheck } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import WhatsAppIcon from '../common/WhatsAppIcon';
 import confetti from 'canvas-confetti';
 
 export default function OrderFunnel({ products }) {

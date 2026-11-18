@@ -1,6 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Sparkles, HeartHandshake, Sun } from 'lucide-react';
-import { TRUST_STATS } from '../data/products';
+import { TRUST_STATS } from '../../data/products';
 
 export default function AboutSection() {
   return (
